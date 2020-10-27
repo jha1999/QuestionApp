@@ -1,0 +1,158 @@
+<!-- <div class="nav">
+    <app-navigation></app-navigation>
+</div> -->
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Generate Question Paper</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <!-- <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="What is MS" formControlName="question">
+              <mat-error *ngIf="addressForm.controls['question'].hasError('required')">
+                Question is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div> -->
+        <div class="row">
+          
+            <div class="col">
+              <mat-form-field class="full-width">
+                <mat-select placeholder="Maximum Marks" formControlName="maxmark">
+                  <mat-option *ngFor="let maxmark of maxmarks" [value]="maxmark.abbreviation">
+                    {{ maxmark.name }}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="addressForm.controls['maxmark'].hasError('required')">
+                  Maximum Marks <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        
+        
+        
+        <div class="row">
+          
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Stream" formControlName="stream">
+                <mat-option *ngFor="let stream of streams" [value]="stream.abbreviation">
+                  {{ stream.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="addressForm.controls['stream'].hasError('required')">
+                Stream is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Subject" formControlName="subject">
+                <mat-option *ngFor="let subject of subjects" [value]="subject.abbreviation">
+                  {{ subject.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="addressForm.controls['subject'].hasError('required')">
+                Subject is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Semester" formControlName="semester">
+                <mat-option *ngFor="let semester of semesters" [value]="semester.abbreviation">
+                  {{ semester.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="addressForm.controls['semester'].hasError('required')">
+                Semester is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Template" formControlName="module">
+                <mat-option *ngFor="let module of modules" [value]="module.abbreviation">
+                  {{ module.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="addressForm.controls['module'].hasError('required')">
+                Module is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <!-- <div class="row">
+          
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Question Type" formControlName="questionType">
+                <mat-option *ngFor="let questionType of questionTypes" [value]="questionType.abbreviation">
+                  {{ questionType.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="addressForm.controls['questionType'].hasError('required')">
+                Question Type <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Difficulty Level" formControlName="difficultyLevel">
+                <mat-option *ngFor="let difficultyLevel of difficultyLevels" [value]="difficultyLevel.abbreviation">
+                  {{ difficultyLevel.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="addressForm.controls['difficultyLevel'].hasError('required')">
+                Difficulty Level <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Taxonomy Level" formControlName="taxonomyLevel">
+                <mat-option *ngFor="let taxonomyLevel of taxonomyLevels" [value]="taxonomyLevel.abbreviation">
+                  {{ taxonomyLevel.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="addressForm.controls['taxonomyLevel'].hasError('required')">
+                Taxonomy Level <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div> -->
+        
+       
+      </mat-card-content>
+      <div>
+      <div class="card-container">
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Submit</button>
+        </mat-card-actions>
+        <mat-card-actions>
+          <button mat-raised-button color="primary"  type="submit">Customize</button>
+        </mat-card-actions>
+      </div>
+      </div>
+    </mat-card>
+  </form>
+  
