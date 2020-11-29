@@ -2,12 +2,29 @@
   <div class="logo">
     <h2>Question Generator</h2>
   </div>
-  <div class="nav-links">
-    <a mat-button [routerLink]="[ '/' ]">Dashboard</a>
-    <a mat-button [routerLink]="[ '/form' ]">Add Question</a>
-    <a mat-button [routerLink]="[ '/profile' ]">Profile</a>
-    <a *ngIf="!(loggedIn)" mat-button [routerLink]="[ '/auth/login' ]">Login</a>
-    <a *ngIf="!(loggedIn)" mat-button [routerLink]="[ '/auth/register' ]">Register</a>
-    <a *ngIf="(loggedIn)" mat-button [routerLink]="[ '/' ]">Sign Out</a>
+  <div class="tab">
+    <div class="tab-icon">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+      <a mat-button [routerLink]="[ '/' ]">Dashboard </a>
+     </div>
+     <div class="tab-icon">
+      <mat-icon>library_add</mat-icon>
+      <a mat-button [routerLink]="[ '/form' ]">Add Question</a>
+     </div>
+     <div class="tab-icon">
+      <mat-icon>account_circle</mat-icon>
+      <a mat-button [routerLink]="[ '/profile' ]">Profile</a>
+      <a *ngIf="!(loggedIn)" mat-button [routerLink]="[ '/auth/login' ]">Login</a>
+     <a *ngIf="!(loggedIn)" mat-button [routerLink]="[ '/auth/register' ]">Register</a>
+     </div>
+     <div class="tab-icon">
+      <mat-icon>exit_to_app</mat-icon>
+      <a *ngIf="(loggedIn)" mat-button [routerLink]="[ '/' ]">Sign Out</a>
+     </div>
+
   </div>
+   
+    
+
+  
 </nav>
