@@ -22,6 +22,153 @@ export class DashboardComponent {
 
   hasUnitNumber = false;
 
+  stream2 = [
+    // Stream: Computers
+    {
+      name: 'Computers',
+      abbreviation: 'CMPN',
+      sem1:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem2:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem3:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem4:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem5:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem6:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem7:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem8:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      }
+    },
+    // Stream: Stream2
+    {
+      name: 'Computers',
+      abbreviation: 'CMPN',
+      sem1:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem2:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem3:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem4:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem5:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem6:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem7:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem8:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      }
+    },
+    // Stream: Stream3
+    {
+      name: 'Computers',
+      abbreviation: 'CMPN',
+      sem1:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem2:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem3:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem4:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem5:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem6:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem7:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem8:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      }
+    },
+    // Stream: Stream4
+    {
+      name: 'Computers',
+      abbreviation: 'CMPN',
+      sem1:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem2:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem3:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem4:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem5:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem6:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem7:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem8:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      }
+    },
+    // Stream: Stream5
+    {
+      name: 'Computers',
+      abbreviation: 'CMPN',
+      sem1:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem2:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem3:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem4:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem5:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem6:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem7:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      },
+      sem8:{
+        subjects: ['C++', 'Computer Graphics', 'Operation System']
+      }
+    },
+  ]
 
   streams = [
     {name: 'Computers', abbreviation: 'CMPN'},
