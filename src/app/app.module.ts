@@ -29,6 +29,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { FormComponent } from './components/form/form.component'
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
+// import { AdmindashComponent } from './components/admindash/admindash.component';
+// import { AdminformComponent } from './components/adminform/adminform.component';
+import { AdminmaganeuserComponent } from './components/adminmaganeuser/adminmaganeuser.component';
 
 
 @NgModule({
@@ -40,6 +43,9 @@ import { MatCardModule } from '@angular/material/card';
     // AddquestionComponent,
     ProfileComponent,
     FormComponent,
+    // AdmindashComponent,
+    // AdminformComponent,
+    AdminmaganeuserComponent,
   ],
   imports: [
     BrowserModule,
