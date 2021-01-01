@@ -180,14 +180,17 @@ export class DashboardComponent {
     {name: 'Civil', abbreviation: 'CIVIL'},
   ];
 
+  patterns = []
+
   subjects = [];
   semesters = ['I','II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
-  modules = [
-    {name: 'Template 1', abbreviation: 'CMPN'},
-    {name: 'Template 2', abbreviation: 'ELEC'},
-    
-    
+  eightyPattern = [
+    {name: '20-20-20-20'},
+    {name: '40-20-20'},
   ];
+  twentyPattern = [
+    {name: '5-5-5-5'}
+  ]
   questionTypes = [
     {name: 'Short Note', abbreviation: 'CMPN'},
     {name: 'Differentiate', abbreviation: 'ELEC'},
@@ -208,10 +211,8 @@ export class DashboardComponent {
     
   ];
   maxmarks = [
-    {name: '80 END SEM', abbreviation: 'CMPN'},
-    {name: '20 TERM TEST', abbreviation: 'ELEC'},
-   
-    
+    {name: '80 END SEM', abbreviation: '80'},
+    {name: '20 TERM TEST', abbreviation: '20'},
   ];
 
   constructor(private fb: FormBuilder) {}
@@ -245,8 +246,6 @@ export class DashboardComponent {
     if(this.addressForm.value.semester === 'VIII'){
       this.subjects = this.subjectList[0].VIII.subjects
     }
-
-    console.log(this.subjects)
   }
 
   onSemChange(){
@@ -278,11 +277,19 @@ export class DashboardComponent {
     if(this.addressForm.value.semester === 'VIII'){
       this.subjects = this.subjectList[0].VIII.subjects
     }
+  }
 
-    console.log(this.subjects)
+  onMarksSelect(){
+    if(this.addressForm.value.maxmark === '80'){
+      this.patterns = this.eightyPattern
+    }
+    if(this.addressForm.value.maxmark === '20'){
+      this.patterns = this.twentyPattern
+    }
+    // console.log(typeof(this.addressForm.value.maxmark) )
   }
 
   onSubmit() {
-    console.log(this.addressForm.value.stream)
+    console.log(this.addressForm.value)
   }
 }

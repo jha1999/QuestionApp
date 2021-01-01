@@ -6,6 +6,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component'
 // import { AddquestionComponent } from './components/addquestion/addquestion.component'
 import { ProfileComponent } from './components/profile/profile.component'
 import { FormComponent } from './components/form/form.component'
+import { AdminmaganeuserComponent } from './components/adminmaganeuser/adminmaganeuser.component';
 
 const routes: Routes = [
   {
@@ -13,11 +14,11 @@ const routes: Routes = [
     component: DashboardComponent,
     // canActivate: [AuthGuard]
   },
-  // {
-  //   path: 'dashboard',
-  //   component: DashboardComponent,
-  //   canActivate: [AuthGuard]
-  // },
+  {
+    path: 'user',
+    component: AdminmaganeuserComponent,
+    // canActivate: [AuthGuard]
+  },
   // {
   //   path: 'addQuestion',
   //   component: FormComponent,
@@ -37,7 +38,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

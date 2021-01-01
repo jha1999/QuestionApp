@@ -21,7 +21,7 @@
           
             <div class="col">
               <mat-form-field class="full-width">
-                <mat-select placeholder="Maximum Marks" formControlName="maxmark">
+                <mat-select placeholder="Maximum Marks" (selectionChange)="onMarksSelect()" formControlName="maxmark">
                   <mat-option *ngFor="let maxmark of maxmarks" [value]="maxmark.abbreviation">
                     {{ maxmark.name }}
                   </mat-option>
@@ -84,8 +84,8 @@
           <div class="col">
             <mat-form-field class="full-width">
               <mat-select placeholder="Template" formControlName="module">
-                <mat-option *ngFor="let module of modules" [value]="module.abbreviation">
-                  {{ module.name }}
+                <mat-option *ngFor="let pattern of patterns" [value]="pattern.name">
+                  {{ pattern.name }}
                 </mat-option>
               </mat-select>
               <mat-error *ngIf="addressForm.controls['module'].hasError('required')">
@@ -145,11 +145,11 @@
       <div>
       <div class="card-container">
         <mat-card-actions>
-          <button mat-raised-button color="primary" type="submit">Submit</button>
+          <button mat-raised-button color="primary" type="submit">Generate Paper</button>
         </mat-card-actions>
-        <mat-card-actions>
+        <!-- <mat-card-actions>
           <button mat-raised-button color="primary"  type="submit">Customize</button>
-        </mat-card-actions>
+        </mat-card-actions> -->
       </div>
       </div>
     </mat-card>
