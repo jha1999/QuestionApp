@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,  Validators } from '@angular/forms';
+import { PdfMakeService } from 'src/app/services/pdf-make.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -215,7 +216,10 @@ export class DashboardComponent {
     {name: '20 TERM TEST', abbreviation: '20'},
   ];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private pdfMaker: PdfMakeService
+    ) {}
 
   onStreamChange(){
 
@@ -291,5 +295,13 @@ export class DashboardComponent {
 
   onSubmit() {
     console.log(this.addressForm.value)
+    let data = { content: [
+      'Question 1',
+      'Question 2',
+      'Question 3',
+      'Question 4'
+    ]}
+
+    this.pdfMaker.generatePdf(data)
   }
 }
