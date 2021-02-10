@@ -30,7 +30,7 @@ export class DashboardComponent {
       name: 'Computers',
       abbreviation: 'CMPN',
       I:{
-        subjects: ['Applied Maths', 'Applied Physics','Applied Chemistry', 'EVS','BEE','Enigineering Mechanics']
+        subjects: ['Applied Mathematics-1', 'Applied Physics-1', 'Applied Chemistry-1', 'Engineering Mechanics', 'Basic Electrical Engineering', 'Environmental studies', 'Basic Workshop Practice-1']
       },
       II:{
         subjects: ['Applied Mathematics-2', 'Applied Physics-2', 'Applied Chemistry-2', 'Engineering Drawing', 'Structured Programming Approach', 'Communication Skills', 'Basic Workshop Practice-2']
@@ -174,17 +174,26 @@ export class DashboardComponent {
   ]
 
   streams = [
-    {name: 'Computers', abbreviation: 'CMPN'},
-    {name: 'Eectronics and Telecommunication', abbreviation: 'EXTC'},
-    {name: 'Electronics', abbreviation: 'ELEC'},
-    {name: 'Mechanical', abbreviation: 'MECH'},
-    {name: 'Civil', abbreviation: 'CIVIL'},
+    {name: 'Computer Engineering', abbreviation: 'CMPN'},
+    {name: 'Eectronics and Telecommunication Engineering', abbreviation: 'EXTC'},
+    {name: 'Electronics Engineering', abbreviation: 'ELEC'},
+    {name: 'Mechanical Engineering', abbreviation: 'MECH'},
+    {name: 'Civil Engineering', abbreviation: 'CIVIL'},
   ];
 
   patterns = []
 
   subjects = [];
-  semesters = ['I','II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
+  semesters = [
+    {name: 'Semester I', abbreviation: 'I'},
+    {name: 'Semester II', abbreviation: 'II'},
+    {name: 'Semester III', abbreviation: 'III'},
+    {name: 'Semester IV', abbreviation: 'IV'},
+    {name: 'Semester V', abbreviation: 'V'},
+    {name: 'Semester VI', abbreviation: 'VI'},
+    {name: 'Semester VII', abbreviation: 'VII'},
+    {name: 'Semester VIII', abbreviation: 'VIII'},
+  ];
   eightyPattern = [
     {name: '20-20-20-20'},
     {name: '40-20-20'},
@@ -296,10 +305,16 @@ export class DashboardComponent {
   onSubmit() {
     console.log(this.addressForm.value)
     let data = { content: [
-      'Question 1',
-      'Question 2',
-      'Question 3',
-      'Question 4'
+      {
+        text: 'Paper Code: XXO59 MULTIMEDIA SYSTEM',
+        style: 'header',
+        alignment: 'center'
+      },
+      {
+        text: 'Paper Code: XXO59 MULTIMEDIA SYSTEM',
+        style: 'header',
+        alignment: 'center'
+      },
     ]}
 
     this.pdfMaker.generatePdf(data)

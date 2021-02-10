@@ -54,8 +54,8 @@
           <div class="col">
             <mat-form-field class="full-width">
               <mat-select placeholder="Semester" (selectionChange)="onSemChange()" formControlName="semester">
-                <mat-option *ngFor="let semester of semesters" [value]="semester">
-                  {{ semester }}
+                <mat-option *ngFor="let semester of semesters" [value]="semester.abbreviation">
+                  {{ semester.name }}
                 </mat-option>
               </mat-select>
               <mat-error *ngIf="addressForm.controls['semester'].hasError('required')">

@@ -32,6 +32,7 @@ import { MatCardModule } from '@angular/material/card';
 // import { AdmindashComponent } from './components/admindash/admindash.component';
 // import { AdminformComponent } from './components/adminform/adminform.component';
 import { AdminmaganeuserComponent } from './components/adminmaganeuser/adminmaganeuser.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { AdminmaganeuserComponent } from './components/adminmaganeuser/adminmaga
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
