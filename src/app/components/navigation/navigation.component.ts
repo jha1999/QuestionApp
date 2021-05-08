@@ -9,9 +9,12 @@ import { Component } from '@angular/core';
 export class NavigationComponent {
 
  loggedIn = localStorage.getItem('loggedIn')
+ role = localStorage.getItem('role')
+
 
   constructor(
     // private authService = AuthService
   ) {}
+
 
 }

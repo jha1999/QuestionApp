@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['',Validators.required],
+      password: ['',Validators.required]
     })
   }
 
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       // console.log(this.loginForm.value)
       this.authService.login(this.loginForm.value)
-      localStorage.setItem('loggedIn','true')
+     
       this.loggedIn = localStorage.getItem('loggedIn')
       this.router.navigate['/']
     }else{

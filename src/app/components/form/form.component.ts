@@ -42,7 +42,7 @@ export class FormComponent {
         subjects: ['Applied Mathematics-4', 'Analysis of Algorithms', 'Computer Organization and Architecture', 'Computer Graphics', 'Operating System', 'Analysis of Algorithms Lab', 'Computer Graphics Lab', 'Processor Architecture Lab', 'Operating System Lab', 'Open Source Tech Lab']
       },
       V:{
-        subjects: ['Microprocessor', 'Database Management System', 'Computer Network', 'Theory of Computer Science', 'Microprocessor Lab', 'Computer Network Lab', 'Database & Info. System Lab', 'Web Design Lab', 'Business Comm. & Ethics']
+        subjects: ['Microprocessor', 'Database Management System', 'Multimedia Systems','Computer Network', 'Theory of Computer Science', 'Microprocessor Lab', 'Computer Network Lab', 'Database & Info. System Lab', 'Web Design Lab', 'Business Comm. & Ethics']
       },
       VI:{
         subjects: ['Software Engineering', 'System Programming & Complier Construction', 'Data Warehousing & Mining', 'Cryptography & System Security', 'Software Engineering Lab', 'System software Lab', 'Data warehousing & Mining Lab', 'System Security Lab', 'Mini-Project']
@@ -332,6 +332,7 @@ export class FormComponent {
         res => console.log(res),
         err => console.log(err)
       )
+      alert("Question Sucessfully Added!")
     }
     else{
       alert("There is some error")

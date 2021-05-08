@@ -22,9 +22,31 @@ export class AuthService {
   ) { }
 
   login(user: User){
-    if(user.username !== '' && user.password !== ''){
+    if(user.username === 'admin' && user.password === 'admin'){
+      localStorage.setItem('loggedIn','true')
+      localStorage.setItem('role','admin')
+      this.loggedIn.next(true)
+      this.router.navigate(['/admin/dashboard'])
+    }else if(user.username === 'vishnu' && user.password === '12345'){
+      localStorage.setItem('loggedIn','true')
+      localStorage.setItem('role','user')
       this.loggedIn.next(true)
       this.router.navigate(['/'])
+    }
+    else if(user.username === 'Shivansh' && user.password === '123456'){
+      localStorage.setItem('loggedIn','true')
+      localStorage.setItem('role','user')
+      this.loggedIn.next(true)
+      this.router.navigate(['/'])
+    }
+    else if(user.username === 'shibu1999@gmail.com' && user.password === '123456'){
+      localStorage.setItem('loggedIn','true')
+      localStorage.setItem('role','user')
+      this.loggedIn.next(true)
+      this.router.navigate(['/'])
+    }
+    else{
+      alert("Incorrect Username or Password ")
     }
   }
 

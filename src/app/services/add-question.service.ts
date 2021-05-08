@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class AddQuestionService {
 
   private addQuestionURL = 'http://localhost:8000/user'
+  private getQuestionURL = 'http://localhost:8000/user/getQuestion'
 
   constructor(
     private http: HttpClient
@@ -15,4 +16,9 @@ export class AddQuestionService {
   addQuestion(quesData){
     return this.http.post<any>(this.addQuestionURL, quesData)
   }
+
+  getQuestion(data){
+    return this.http.post<any>(this.getQuestionURL, data)
+  }
 }
+

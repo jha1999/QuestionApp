@@ -83,12 +83,12 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <mat-select placeholder="Template" formControlName="module">
+              <mat-select placeholder="Template" formControlName="template">
                 <mat-option *ngFor="let pattern of patterns" [value]="pattern.name">
                   {{ pattern.name }}
                 </mat-option>
               </mat-select>
-              <mat-error *ngIf="addressForm.controls['module'].hasError('required')">
+              <mat-error *ngIf="addressForm.controls['template'].hasError('required')">
                 Module is <strong>required</strong>
               </mat-error>
             </mat-form-field>

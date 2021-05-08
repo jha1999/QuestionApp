@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,  Validators } from '@angular/forms';
+import { AddQuestionService } from 'src/app/services/add-question.service';
 import { PdfMakeService } from 'src/app/services/pdf-make.service';
+import { paper1, paper2, paper5 } from '../QuestionPapers/Paper1.js'
 
 @Component({
   selector: 'app-dashboard',
@@ -8,15 +10,26 @@ import { PdfMakeService } from 'src/app/services/pdf-make.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+
+  constructor(
+    private getQuestion: AddQuestionService,
+    private fb: FormBuilder,
+    private pdfMaker: PdfMakeService
+  ) {
+
+  }
+  index:number = 0
+  questionArray = []
+
   addressForm = this.fb.group({
-    question: [null, Validators.required],
+    // question: [null, Validators.required],
     stream: [null, Validators.required],
     subject: [null, Validators.required],
     semester: [null, Validators.required],
-    module: [null, Validators.required],
-    questionType: [null, Validators.required],
-    difficultyLevel: [null, Validators.required],
-    taxonomyLevel: [null, Validators.required],
+    template: [null, Validators.required],
+    // questionType: [null, Validators.required],
+    // difficultyLevel: [null, Validators.required],
+    // taxonomyLevel: [null, Validators.required],
     maxmark: [null, Validators.required],
   });
 
@@ -42,7 +55,7 @@ export class DashboardComponent {
         subjects: ['Applied Mathematics-4', 'Analysis of Algorithms', 'Computer Organization and Architecture', 'Computer Graphics', 'Operating System', 'Analysis of Algorithms Lab', 'Computer Graphics Lab', 'Processor Architecture Lab', 'Operating System Lab', 'Open Source Tech Lab']
       },
       V:{
-        subjects: ['Microprocessor', 'Database Management System', 'Computer Network', 'Theory of Computer Science', 'Microprocessor Lab', 'Computer Network Lab', 'Database & Info. System Lab', 'Web Design Lab', 'Business Comm. & Ethics']
+        subjects: ['Microprocessor', 'Database Management System', 'Computer Network', 'Theory of Computer Science', 'Microprocessor Lab', 'Multimedia Systems', 'Computer Network Lab', 'Database & Info. System Lab', 'Web Design Lab', 'Business Comm. & Ethics']
       },
       VI:{
         subjects: ['Software Engineering', 'System Programming & Complier Construction', 'Data Warehousing & Mining', 'Cryptography & System Security', 'Software Engineering Lab', 'System software Lab', 'Data warehousing & Mining Lab', 'System Security Lab', 'Mini-Project']
@@ -196,7 +209,7 @@ export class DashboardComponent {
   ];
   eightyPattern = [
     {name: '20-20-20-20'},
-    {name: '40-20-20'},
+    
   ];
   twentyPattern = [
     {name: '5-5-5-5'}
@@ -222,13 +235,9 @@ export class DashboardComponent {
   ];
   maxmarks = [
     {name: '80 END SEM', abbreviation: '80'},
-    {name: '20 TERM TEST', abbreviation: '20'},
+    {name: '20 TERM TEST I', abbreviation: '20'},
+    {name: '20 TERM TEST II', abbreviation: '20'},
   ];
-
-  constructor(
-    private fb: FormBuilder,
-    private pdfMaker: PdfMakeService
-    ) {}
 
   onStreamChange(){
 
@@ -302,21 +311,194 @@ export class DashboardComponent {
     // console.log(typeof(this.addressForm.value.maxmark) )
   }
 
-  onSubmit() {
-    console.log(this.addressForm.value)
+  getfiveRandomQuestion = (questionList) => {
+    // const newQuestionList = questionList.slice(5)
+    // return newQuestionList
+    return questionList.slice(0,5)
+  }
+
+  twentyTemplate = (questionList) => {
+    
+    const questionContent = this.getfiveRandomQuestion(questionList)
     let data = { content: [
       {
         text: 'Paper Code: XXO59 MULTIMEDIA SYSTEM',
         style: 'header',
-        alignment: 'center'
+        alignment: 'center',
+        margin: [0,0,0,0],
       },
       {
-        text: 'Paper Code: XXO59 MULTIMEDIA SYSTEM',
+        text: '( 1 HOUR )                                                      (Total Marks: 20)\n',
+       
         style: 'header',
-        alignment: 'center'
+        alignment: 'right',
+        margin: [0,10,0,0],
+        fontSize: 11,
       },
+      {
+        text: [
+          'N.B.: \n',
+          {text: '(1) Question No.1 ', fontSize: 12, bold: true},
+          'is ',
+          {text: 'compulsory\n', fontSize: 12, bold: true},
+          {text: '(2) Draw ', fontSize: 12, bold: true},
+          'neat ',
+          {text: 'diagrams ', fontSize: 12, bold: true},
+          'wherever',
+         {text: ' necessary\n', fontSize: 12, bold: true,margin: [0,0,0,10],},
+         {text: '(3) Answer any four', fontSize: 12, bold: true,margin: [0,0,0,10],},
+         
+         
+        
+        ],
+        margin: [10,10,10,10],
+        
+      },
+        
+       {
+            columns: [
+              {
+                text: `Q1. ${questionContent[0]}`,alignment: 'justify',margin: [0,0,0,5],
+              },
+              {
+                text: '[5]', alignment: 'right',
+              },
+            ]
+          },
+          // {
+          //   type: 'lower-alpha',
+          //   separator: ')',
+          //   ol: [
+          //     'Multimedia Database and Normal Database',
+          //     'Printer ans Scanner',
+          //     'RTF and TIFF File Format',
+          //     'Types of video signals'
+          //   ],
+          //   margin: [18,0,0,20],
+          // },
+          
+          {
+            columns: [
+              {
+                text: `Q2. ${questionContent[1]}`,alignment: 'justify',margin: [0,0,0,5],
+              },
+              {
+                width: 50,
+                text: '[5]', alignment: 'right',
+              },
+            ]
+          },
+          // {
+          //   columns: [
+          //     {
+          //       text: 'b)Discuss the characteristics of soundwave.',alignment: 'justify',margin: [18,0,0,10],
+          //     },
+          //     {
+          //       width: 50,
+          //       text: '[10]', alignment: 'right',
+          //     },
+          //   ],
+          //   margin: [0,0,0,20],
+          // },
+          {
+            columns: [
+              {
+                text: `Q3. ${questionContent[2]}`,alignment: 'justify',margin: [0,0,0,5],
+              },
+              {
+                width: 50,
+                text: '[5]', alignment: 'right',
+              },
+            ]
+          },
+          
+          // {
+          //   columns: [
+          //     {
+          //       text: 'b)Differentiate the different audio compression techniques',alignment: 'justify',margin: [18,0,0,10],
+          //     },
+          //     {
+          //       width: 50,
+          //       text: '[10]', alignment: 'right',
+          //     },
+          //   ],
+          //   margin: [0,0,0,20],
+          // },
+          {
+            columns: [
+              {
+    
+                text: `Q4. ${questionContent[3]}`,alignment: 'justify',margin: [0,0,0,5],
+              },
+              {
+                width: 50,
+                text: '[5]', alignment: 'right',
+              },
+            ]
+          },
+          {
+            columns: [
+              {
+                text: `Q5. ${questionContent[4]}`,alignment: 'justify',margin: [0,0,0,5],
+              },
+              {
+                width: 50,
+                text: '[5]', alignment: 'right',
+              },
+            ],
+            margin: [0,0,0,20],
+          },
     ]}
-
     this.pdfMaker.generatePdf(data)
   }
+
+  getRandomInt = (max) =>{
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+  paperGenerationFuntion = (index, template) => {
+    const paperSet = [paper1, paper2, paper5]
+    // let index = this.getRandomInt(3)
+    console.log(paperSet[index])
+    if(template === '20-20-20-20'){
+      this.pdfMaker.generatePdf(paperSet[index])
+    }
+    // else if(template === '40-20-20'){
+    //   this.pdfMaker.generatePdf(paper5)
+    // }
+  }
+  onSubmit() {
+    let data = {}
+
+    const quesData = {
+      stream: this.addressForm.value.stream ,
+      semester: this.addressForm.value.semester,
+      subject: this.addressForm.value.subject,
+      template: this.addressForm.value.template
+    }
+    console.log(this.addressForm.value)
+
+    if(this.addressForm.valid){
+      this.getQuestion.getQuestion(quesData)
+      .subscribe(
+        res => {
+          if(this.addressForm.value.maxmark === '20' && this.addressForm.value.stream === 'CMPN' && this.addressForm.value.subject === 'Multimedia Systems'){
+            const questionContent = res.map((element,i) => {
+              return(
+                element.question
+              )
+            });
+            this.twentyTemplate(questionContent)
+          }else if(this.addressForm.value.maxmark === '80' && this.addressForm.value.stream === 'CMPN' && this.addressForm.value.subject === 'Multimedia Systems'){
+            this.index < 3 && this.paperGenerationFuntion(this.index, this.addressForm.value.template)
+            this.index < 3 ? this.index += 1 : this.index = 0
+          }
+        },
+        err => console.log(err)
+      )
+      
+      
+    }
+  }
 }
+  

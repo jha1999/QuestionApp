@@ -1,0 +1,51 @@
+<div class='container'>
+    <div class="input-container">
+        <div class="stream-container">
+            <mat-form-field appearance="legacy">
+                <mat-label>Add Stream</mat-label>
+                <input [(ngModel)]="stream" name='stream' id='stream' matInput placeholder="Enter the stream name">
+            </mat-form-field>
+            <button (click)="submitStream" mat-raised-button color="primary">ADD STREAM</button>
+        </div>
+        
+        <div class='subject-container'>
+            <div class="row">
+        
+                <div class="col">
+                  <mat-form-field class="full-width">
+                    <mat-select placeholder="Stream" formControlName="stream">
+                      <mat-option *ngFor="let stream of streams" [value]="stream.abbreviation">
+                        {{ stream.name }}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="addressForm.controls['stream'].hasError('required')">
+                      Stream is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col">
+                  <mat-form-field class="full-width">
+                    <mat-select placeholder="Semester" formControlName="semester">
+                      <mat-option *ngFor="let semester of semesters" [value]="semester.abbreviation">
+                        {{ semester.name }}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="addressForm.controls['semester'].hasError('required')">
+                      Semester is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Add Subject</mat-label>
+                <input [(ngModel)]="subject" name='subject' id='subject' matInput placeholder="Enter the subject name">
+            </mat-form-field>
+            <button (click)="submitSubject()" mat-raised-button color="primary">ADD SUBJECT</button>
+        </div>
+    </div>
+    <app-adminmaganeuser></app-adminmaganeuser>
+</div>
+    

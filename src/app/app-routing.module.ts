@@ -7,12 +7,13 @@ import { DashboardComponent } from './components/dashboard/dashboard.component'
 import { ProfileComponent } from './components/profile/profile.component'
 import { FormComponent } from './components/form/form.component'
 import { AdminmaganeuserComponent } from './components/adminmaganeuser/adminmaganeuser.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'user',
@@ -27,13 +28,18 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'form',
     component: FormComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
+  {
+    path: 'admin/dashboard',
+    component: AdminDashboardComponent,
+    // canActivate: [AuthGuard]
+  }
   
 ];
 

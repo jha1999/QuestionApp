@@ -1,0 +1,35 @@
+table{
+    width: 100%;
+    margin: auto;
+}
+
+.container{
+    width: 100%;
+}
+
+.input-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stream-container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.subject-container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 40px;
+}

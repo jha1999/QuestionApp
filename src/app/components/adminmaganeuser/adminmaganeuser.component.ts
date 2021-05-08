@@ -11,7 +11,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AdminmaganeuserComponent implements OnInit {
 
-  users =[]
+  users =[
+    {id: 1, firstName: ' Shivansh', lastName: ' Jha', email: 'shibu1999@gmail.com', signUpDate: '20-03-2021', action: ''},
+    {id: 2, firstName: ' Swami', lastName: ' Iyer', email: 'iswami85@gmail.com', signUpDate: '20-04-2021', action: ''},
+    {id: 3, firstName: ' Saniya', lastName: ' Kadam', email: 'jksaniya7@gmail.com', signUpDate: '21-04-2021', action: ''},
+    {id: 4, firstName: ' Niyati', lastName: ' Jadhav', email: 'jadhavniyu@gmail.com', signUpDate: '21-04-2021', action: ''}
+
+  ] //TBF
   editField: any;
   dataSource = this.users
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'signUpOn', 'action'];
@@ -42,6 +48,12 @@ export class AdminmaganeuserComponent implements OnInit {
   }
 
   remove(id: any){
+    
+    this.users=this.users.filter(data=>{
+      console.log(id)
+      return data.id!==id
+      
+    })
     //console.log(id)
     // this.authService.deleteUser(id)
     // .subscribe(

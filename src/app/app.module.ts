@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
 import { NavigationComponent } from "./components/navigation/navigation.component";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 // Angular material component 
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -33,6 +33,8 @@ import { MatCardModule } from '@angular/material/card';
 // import { AdminformComponent } from './components/adminform/adminform.component';
 import { AdminmaganeuserComponent } from './components/adminmaganeuser/adminmaganeuser.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -47,6 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
     // AdmindashComponent,
     // AdminformComponent,
     AdminmaganeuserComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +69,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatRadioModule,
     MatCardModule,
     HttpClientModule,
+    MatTableModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
